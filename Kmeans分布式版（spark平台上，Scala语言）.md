@@ -86,55 +86,6 @@ object KMeans {
       ab
     })
     //---------------------------数据去掉第一行和前两列完毕--------------------------
-    //---------------------------归一化----------------------------------------------
-//    var maxNorm:ArrayBuffer[Double]  = new ArrayBuffer[Double]()
-//    var minNorm:ArrayBuffer[Double] = new ArrayBuffer[Double]()
-//    var brandNorm:ArrayBuffer[Double] = new ArrayBuffer[Double]()
-//    //---------------------------1.寻找本列最大最小值---------------------------------
-////    val norm: Array[ArrayBuffer[Double]] =
-////    val normTmp: RDD[(ArrayBuffer[Double], ArrayBuffer[Double])] =
-//     abLinesBefore.map(x => {
-////      val xLength = x.length
-////
-////      var maxNormTmp: ArrayBuffer[Double] = new ArrayBuffer[Double]()
-////      var minNormTmp: ArrayBuffer[Double] = new ArrayBuffer[Double]()
-////
-////      for(i<- 0 until(xLength)) {
-////        maxNormTmp(i) = 0
-////        minNormTmp(i) = Inf
-////      }
-//        for (i <- 0 until x.length) { //进来一个数组后逐位比较，求该位的最大最小值。
-//          if (x(i) > maxNorm(i)) //0用来放最大值，1用来放最小值
-//            maxNorm(i) = x(i)
-//          if (x(i) < minNorm(i))
-//            minNorm(i) = x(i)
-//        }
-//
-////      (maxNormTmp, minNormTmp)
-//    }
-//    )
-//    val norm: Array[(ArrayBuffer[Double], ArrayBuffer[Double])] = normTmp.collect()
-//    maxNorm = norm(0)._1
-//    minNorm = norm(0)._2
-//    for(i <- 0 until(norm(0)._1.length)) {
-//      brandNorm(i) = maxNorm(i)- minNorm(i)
-//    }
-//    println("每列最小值组成的数组为")
-//    minNorm.foreach(println)
-//    maxNorm.foreach(println)
-//
-//
-//    //--------------------------------找到了每列的最大最小值------------------------------------
-//    val abLines: RDD[ArrayBuffer[Double]] = abLinesBefore.map(x => {
-//      var xTmp: ArrayBuffer[Double] = new ArrayBuffer[Double]()
-//      for (i <- 0 until (x.length)) {
-//        xTmp(i) = x(i) / brandNorm(i)
-//      }
-//      xTmp
-//    }
-//    )
-    //---------------------------归一化完成------------------------------------------
-
     //---------------------------选距离最远的k个点做初始质心------------------------------------------------
     val centroidRandom: Array[ArrayBuffer[Double]] = new Array[ArrayBuffer[Double]](k)
     centroidRandom(0) = abLines.first()
