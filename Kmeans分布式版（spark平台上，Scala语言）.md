@@ -1,4 +1,8 @@
 ```
+//代码是调通的，处理逻辑可以参考。
+//用时需要自己导入相应的库，连接spark。
+//代码依然有改进的部分，欢迎指正。
+
 import ...
 import org.apache.spark.rdd.RDD
 import scala.collection.mutable.ArrayBuffer
